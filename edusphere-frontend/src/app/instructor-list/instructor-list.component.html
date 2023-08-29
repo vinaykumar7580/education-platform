@@ -1,0 +1,32 @@
+
+<h2>Instructor List</h2>
+<table class="table">
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Department</th>
+      <th>Email</th>
+      <th>Contact Number</th>
+      <th>Actions</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let instructor of instructors">
+      <td>{{ instructor.name }}</td>
+      <td>{{ instructor.department }}</td>
+      <td>{{ instructor.email }}</td>
+      <td>{{ instructor.contact_number }}</td>
+      <td>
+        <button class="btn btn-sm btn-danger" (click)="deleteInstructor(instructor.id)">Delete</button>
+        <!-- Add edit/update button and functionality here -->
+        <a routerLink="/instructors/{{ instructor.id }}" class="btn btn-sm btn-primary">View</a>
+        <a routerLink="/instructors/{{ instructor.id }}/edit" class="btn btn-sm btn-success">Edit</a>
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+<div class="text-right">
+    <a routerLink="/instructors/new" class="btn btn-primary">Add New Instructor</a>
+</div>
+
