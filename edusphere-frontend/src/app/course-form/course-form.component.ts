@@ -11,53 +11,87 @@ import { Department } from '../course.model';
 })
 export class CourseFormComponent implements OnInit{
   courseForm!: FormGroup;
-  //departments: Department[] = [];
   isEditMode = false;
-  //courseId:number;
+  departments: Department[] = [];
 
   constructor(
-    private formBuilder:FormBuilder,
+    private formBuilder: FormBuilder,
     private route: ActivatedRoute,
     private router: Router,
     private courseService: CourseService
-  ) { }
+  ) {}
 
   ngOnInit(): void {
     this.initForm();
-    //this.loadDepartments();
-    const courseIdParam=this.route.snapshot.paramMap.get('id');
-
-    if(courseIdParam !== null){
-      const courseId= +courseIdParam;
-      if(!isNaN(courseId)){
-        if(courseId === -1){
-          this.isEditMode=false;
-
-        }else{
-          this.isEditMode = true;
-          //this.loadCourseForEdit(courseId);
-
-        }
-      }else{
-        console.error('Invalid course ID:', courseIdParam);
+    this.loadDepartments();
+  
+    const courseIdParam = this.route.snapshot.paramMap.get('id');
+    if (courseIdParam !== null) {
+      const courseId = +courseIdParam;
+      if (!isNaN(courseId)) {
+        this.isEditMode = true;
+        this.loadCourseForEdit(courseId);
       }
-    }else{
-      console.error('Course ID is missing.');
     }
   }
 
-  //form handle
-  initForm():void{
-    this.courseForm=this.formBuilder.group({
+  initForm(): void {
+    this.courseForm = this.formBuilder.group({
       course_code: ['', Validators.required],
       course_name: ['', Validators.required],
       department: [null, Validators.required],
       credits: ['', Validators.required],
       description: ['']
-    })
-
+    });
   }
 
+  loadDepartments(): void {
+    this.courseService.getDepartments().subscribe(
+      (departments: Department[]) => {
+        this.departments = departments;
+      },
+      (error) => {
+        console.error('Error loading departments:', error);
+      }
+    );
+  }
+
+  loadCourseForEdit(courseId: number): void {
+    this.courseService.getCourse(courseId).subscribe(
+      (course) => {
+        this.courseForm.patchValue(course);
+      },
+      (error) => {
+        console.error('Error loading course:', error);
+      }
+    );
+  }
+
+  saveCourse(): void {
+    if (this.courseForm.valid) {
+      const courseData = this.courseForm.value;
+      if (this.isEditMode) {
+        const courseId = +this.route.snapshot.paramMap.get('id')!;
+        this.courseService.updateCourse(courseId, courseData).subscribe(
+          () => {
+            this.router.navigate(['/courses']);
+          },
+          (error) => {
+            console.error('Error updating course:', error);
+          }
+        );
+      } else {
+        this.courseService.createCourse(courseData).subscribe(
+          () => {
+            this.router.navigate(['/courses']);
+          },
+          (error) => {
+            console.error('Error creating course:', error);
+          }
+        );
+      }
+    }
+  }
 
 
 

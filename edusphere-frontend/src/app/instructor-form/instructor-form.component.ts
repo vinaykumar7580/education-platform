@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { InstructorService } from '../instructor.service';
+import { Department  } from '../course.model';
 
 @Component({
   selector: 'app-instructor-form',
@@ -11,7 +12,7 @@ import { InstructorService } from '../instructor.service';
 export class InstructorFormComponent implements OnInit {
   instructorForm!: FormGroup;
   isEditMode = false;
-  instructorId: number | null = null;
+  departments: Department[] = [];
 
   constructor(
     private formBuilder: FormBuilder,
@@ -22,51 +23,26 @@ export class InstructorFormComponent implements OnInit {
 
   ngOnInit(): void {
     this.initForm();
+    this.loadDepartments();
+    
     const instructorIdParam = this.route.snapshot.paramMap.get('id');
-  
+
     if (instructorIdParam !== null) {
       const instructorId = +instructorIdParam;
-  
       if (!isNaN(instructorId)) {
         if (instructorId === -1) {
           this.isEditMode = false;
         } else {
           this.isEditMode = true;
-          this.instructorId = instructorId; 
           this.loadInstructorForEdit(instructorId);
         }
       } else {
         console.error('Invalid instructor ID:', instructorIdParam);
       }
     } else {
-      this.isEditMode = false; 
+      console.error('Instructor ID is missing.');
     }
   }
-  
-
-  // ngOnInit(): void {
-  //   this.initForm();
-  //   const instructorIdParam = this.route.snapshot.paramMap.get('id');
-
-  //   if (instructorIdParam !== null) {
-  //     const instructorId = +instructorIdParam;
-  //     if (!isNaN(instructorId)) {
-  //       if (instructorId === -1) {
-  //         this.isEditMode = false;
-  //       } else {
-  //         this.isEditMode = true;
-  //         this.loadInstructorForEdit(instructorId);
-  //         console.log('instructorId:', instructorId);
-  //       }
-  //     } else {
-  //       console.error('Invalid instructor ID:', instructorIdParam);
-  //       console.log('instructorIdParam:', instructorIdParam);
-  //     }
-  //   } else {
-  //     console.error('Instructor ID is missing.');
-      
-  //   }
-  // }
 
   initForm(): void {
     this.instructorForm = this.formBuilder.group({
@@ -77,6 +53,17 @@ export class InstructorFormComponent implements OnInit {
       email: ['', Validators.email],
       contact_number: [''],
     });
+  }
+
+  loadDepartments(): void {
+    this.instructorService.getDepartments().subscribe(
+      (departments: Department[]) => {
+        this.departments = departments;
+      },
+      (error) => {
+        console.error('Error loading departments:', error);
+      }
+    );
   }
 
   loadInstructorForEdit(id: number): void {

@@ -9,20 +9,36 @@ import { CourseService } from '../course.service';
   styleUrls: ['./course-detail.component.css']
 })
 export class CourseDetailComponent implements OnInit{
-  course: Course | undefined;
-  courseId:number;
+  course: Course | null = null;
 
-  constructor(private route:ActivatedRoute, private courseService:CourseService){ }
+  constructor(
+    private route: ActivatedRoute,
+    private courseService: CourseService
+  ) {}
 
   ngOnInit(): void {
-    this.courseId= +this.route.snapshot.paramMap.get('id');
-    this.loadCourse();
+    const courseIdParam = this.route.snapshot.paramMap.get('id');
+
+    if (courseIdParam !== null) {
+      const courseId = +courseIdParam;
+      if (!isNaN(courseId)) {
+        this.loadCourseDetails(courseId);
+      } else {
+        console.error('Invalid course ID:', courseIdParam);
+      }
+    } else {
+      console.error('Course ID is missing.');
+    }
   }
 
-  loadCourse():void{
-    this.courseService.getCourse(this.courseId).subscribe((course)=>{
-      this.course=course;
-    })
+  loadCourseDetails(courseId: number): void {
+    this.courseService.getCourse(courseId).subscribe(
+      (course: Course) => {
+        this.course = course;
+      },
+      (error) => {
+        console.error('Error loading course details:', error);
+      }
+    );
   }
-
 }

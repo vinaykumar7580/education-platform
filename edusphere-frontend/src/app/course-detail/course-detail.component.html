@@ -1,1 +1,12 @@
-<p>course-detail works!</p>
+
+
+<div *ngIf="course">
+    <h2>Course Details</h2>
+    <p><strong>Course Code:</strong> {{ course.course_code }}</p>
+    <p><strong>Course Name:</strong> {{ course.course_name }}</p>
+    <p><strong>Department:</strong> {{ course.department.name }}</p>
+    <p><strong>Credits:</strong> {{ course.credits }}</p>
+    <p><strong>Description:</strong> {{ course.description }}</p>
+</div>
+<div *ngIf="!course">Course not found.</div>
+  

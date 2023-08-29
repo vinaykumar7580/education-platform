@@ -1,1 +1,36 @@
-<p>course-form works!</p>
+
+<h2>{{ isEditMode ? 'Edit Course' : 'Add New Course' }}</h2>
+<form [formGroup]="courseForm" (ngSubmit)="saveCourse()">
+  <!-- Course code input -->
+  <div class="form-group">
+    <label for="course_code">Course Code</label>
+    <input type="text" id="course_code" class="form-control" formControlName="course_code">
+  </div>
+  <!-- Course name input -->
+  <div class="form-group">
+    <label for="course_name">Course Name</label>
+    <input type="text" id="course_name" class="form-control" formControlName="course_name">
+  </div>
+  <!-- Department select -->
+  <div class="form-group">
+    <label for="department">Department</label>
+    <select id="department" class="form-control" formControlName="department">
+      <option *ngFor="let department of departments" [value]="department.id">{{ department.name }}</option>
+    </select>
+  </div>
+  <!-- Credits input -->
+  <div class="form-group">
+    <label for="credits">Credits</label>
+    <input type="number" id="credits" class="form-control" formControlName="credits">
+  </div>
+  <!-- Description input -->
+  <div class="form-group">
+    <label for="description">Description</label>
+    <textarea id="description" class="form-control" formControlName="description"></textarea>
+  </div>
+  <!-- Save button -->
+  <div class="form-group">
+    <button type="submit" class="btn btn-primary">Save</button>
+  </div>
+</form>
+

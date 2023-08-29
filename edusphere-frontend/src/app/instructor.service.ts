@@ -1,12 +1,14 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
+import { Department } from './course.model';
 
 @Injectable({
   providedIn: 'root'
 })
 export class InstructorService {
   private baseUrl='http://127.0.0.1:8000/api/instructors/'
+  private departUrl = 'http://127.0.0.1:8000/api/';
 
   constructor(private http: HttpClient) { }
 
@@ -33,6 +35,11 @@ export class InstructorService {
   deleteInstructor(id: number): Observable<any> {
     const url = `${this.baseUrl}${id}/`;
     return this.http.delete<any>(url);
+  }
+
+  getDepartments(): Observable<Department[]> {
+    const url = `${this.departUrl}departments/`; 
+    return this.http.get<Department[]>(url);
   }
 
   
