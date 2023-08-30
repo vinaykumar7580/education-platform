@@ -11,6 +11,9 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { CourseListComponent } from './course-list/course-list.component';
 import { CourseDetailComponent } from './course-detail/course-detail.component';
 import { CourseFormComponent } from './course-form/course-form.component';
+import { StudentListComponent } from './student-list/student-list.component';
+import { StudentDetailComponent } from './student-detail/student-detail.component';
+import { StudentFormComponent } from './student-form/student-form.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +23,10 @@ import { CourseFormComponent } from './course-form/course-form.component';
     InstructorFormComponent,
     CourseListComponent,
     CourseDetailComponent,
-    CourseFormComponent
+    CourseFormComponent,
+    StudentListComponent,
+    StudentDetailComponent,
+    StudentFormComponent
   ],
   imports: [
     BrowserModule,

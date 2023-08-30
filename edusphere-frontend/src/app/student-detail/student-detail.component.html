@@ -1,0 +1,28 @@
+
+
+<h2>Student Details</h2>
+<div *ngIf="student">
+  <dl class="row">
+    <dt class="col-sm-3">Name</dt>
+    <dd class="col-sm-9">{{ student.name }}</dd>
+
+    <dt class="col-sm-3">Gender</dt>
+    <dd class="col-sm-9">{{ student.gender }}</dd>
+
+    <dt class="col-sm-3">DOB</dt>
+    <dd class="col-sm-9">{{ student.dob }}</dd>
+
+    <dt class="col-sm-3">Major</dt>
+    <dd class="col-sm-9">{{ student.major }}</dd>
+
+    <dt class="col-sm-3">Email</dt>
+    <dd class="col-sm-9">{{ student.email }}</dd>
+
+    <dt class="col-sm-3">Contact Number</dt>
+    <dd class="col-sm-9">{{ student.contact_number }}</dd>
+  </dl>
+</div>
+<div class="text-right">
+  <a routerLink="/students" class="btn btn-primary">Back to List</a>
+</div>
+
