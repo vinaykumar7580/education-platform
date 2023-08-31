@@ -1,0 +1,36 @@
+<h2>Create Announcement</h2>
+
+<form (submit)="createAnnouncement()">
+  <label for="title">Title:</label>
+  <input type="text" id="title" [(ngModel)]="newAnnouncement.title" name="title" required />
+
+  <label for="description">Description:</label>
+  <textarea id="description" [(ngModel)]="newAnnouncement.description" name="description" required></textarea>
+
+  <label for="publish_date">Publish Date:</label>
+  <input type="date" id="publish_date" [(ngModel)]="newAnnouncement.publish_date" name="publish_date" required />
+
+  <label for="department">Department:</label>
+  <select id="department" [(ngModel)]="newAnnouncement.department" name="department" required>
+    <option *ngFor="let department of departments" [value]="department.id">{{ department.name }}</option>
+  </select>
+
+  <label for="course">Course:</label>
+  <select id="course" [(ngModel)]="newAnnouncement.course" name="course" required>
+    <option *ngFor="let course of courses" [value]="course.id">{{ course.course_name }}</option>
+  </select>
+
+  <button type="submit">Create Announcement</button>
+</form>
+
+<h2>Announcements</h2>
+
+<ul>
+  <li *ngFor="let announcement of announcements">
+    <h3>{{ announcement.title }}</h3>
+    <p>{{ announcement.description }}</p>
+    <p>Publish Date: {{ announcement.publish_date }}</p>
+    <p>Department: {{ getDepartmentName(announcement.department) }}</p>
+    <p>Course: {{ getCourseName(announcement.course) }}</p>
+  </li>
+</ul>

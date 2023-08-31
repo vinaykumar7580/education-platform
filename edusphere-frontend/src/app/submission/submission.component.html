@@ -1,0 +1,76 @@
+
+<h2>Create Submission</h2>
+<form (submit)="createSubmission()">
+  <label for="submissionDate">Submission Date:</label>
+  <input
+    type="date"
+    id="submissionDate"
+    [(ngModel)]="newSubmission.submission_date"
+    name="submissionDate"
+    required
+  />
+
+  <label for="status">Status:</label>
+  <select id="status" [(ngModel)]="newSubmission.status" name="status" required>
+    <option value="Submitted">Submitted</option>
+    <option value="Late">Late</option>
+    <option value="Graded">Graded</option>
+  </select>
+
+  <label for="remarks">Remarks:</label>
+  <textarea
+    id="remarks"
+    [(ngModel)]="newSubmission.remarks"
+    name="remarks"
+    required
+  ></textarea>
+
+  <label for="assignment">Assignment:</label>
+  <select
+    id="assignment"
+    [(ngModel)]="newSubmission.assignment"
+    name="assignment"
+    required
+  >
+    <option *ngFor="let assignment of assignments" [value]="assignment.id">
+      {{ assignment.title }}
+    </option>
+  </select>
+
+  <label for="student">Student:</label>
+  <select
+    id="student"
+    [(ngModel)]="newSubmission.student"
+    name="student"
+    required
+  >
+    <option *ngFor="let student of students" [value]="student.id">
+      {{ student.name }}
+    </option>
+  </select>
+
+  <button type="submit">Create Submission</button>
+</form>
+
+<!-- submission.component.html -->
+<h2>Submitted Assignments</h2>
+
+<table>
+  <thead>
+    <tr>
+      <th>Assignment</th>
+      <th>Student</th>
+      <th>Status</th>
+      <th>Submission Date</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let submission of submissions">
+      <td>{{ getAssignmentById(submission.assignment) }}</td>
+      <td>{{ getStudentById(submission.student) }}</td>
+      <td>{{ submission.status }}</td>
+      <td>{{ submission.submission_date | date }}</td>
+    </tr>
+  </tbody>
+</table>
+

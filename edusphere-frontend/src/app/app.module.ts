@@ -19,6 +19,9 @@ import { EnrollmentListComponent } from './enrollment-list/enrollment-list.compo
 import { FormsModule } from '@angular/forms';
 import { EnrollmentComponent } from './enrollment/enrollment.component';
 import { AssignmentComponent } from './assignment/assignment.component';
+import { SubmissionComponent } from './submission/submission.component';
+import { AnnouncementComponent } from './announcement/announcement.component';
+import { DepartmentComponent } from './department/department.component';
 
 @NgModule({
   declarations: [
@@ -35,6 +38,9 @@ import { AssignmentComponent } from './assignment/assignment.component';
     EnrollmentListComponent,
     EnrollmentComponent,
     AssignmentComponent,
+    SubmissionComponent,
+    AnnouncementComponent,
+    DepartmentComponent,
   ],
   imports: [
     BrowserModule,

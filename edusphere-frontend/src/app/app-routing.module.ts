@@ -12,6 +12,9 @@ import { StudentDetailComponent } from './student-detail/student-detail.componen
 import { EnrollmentListComponent } from './enrollment-list/enrollment-list.component';
 import { EnrollmentComponent } from './enrollment/enrollment.component';
 import { AssignmentComponent } from './assignment/assignment.component';
+import { SubmissionComponent } from './submission/submission.component';
+import { AnnouncementComponent } from './announcement/announcement.component';
+import { DepartmentComponent } from './department/department.component';
 
 const routes: Routes = [
   { path: 'instructors', component: InstructorListComponent },
@@ -30,6 +33,9 @@ const routes: Routes = [
   { path: 'enrollment-list', component: EnrollmentListComponent },
   { path: 'assignments', component: AssignmentComponent },
   { path: 'assignments/:id', component: AssignmentComponent },
+  { path: 'submissions', component: SubmissionComponent },
+  { path: 'announcements', component: AnnouncementComponent },
+  { path: 'departments', component: DepartmentComponent },
   { path: '', redirectTo: '/students', pathMatch: 'full' }
 ];
 
