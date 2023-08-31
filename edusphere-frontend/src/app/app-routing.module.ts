@@ -9,6 +9,9 @@ import { CourseDetailComponent } from './course-detail/course-detail.component';
 import { StudentListComponent } from './student-list/student-list.component';
 import { StudentFormComponent } from './student-form/student-form.component';
 import { StudentDetailComponent } from './student-detail/student-detail.component';
+import { EnrollmentListComponent } from './enrollment-list/enrollment-list.component';
+import { EnrollmentComponent } from './enrollment/enrollment.component';
+import { AssignmentComponent } from './assignment/assignment.component';
 
 const routes: Routes = [
   { path: 'instructors', component: InstructorListComponent },
@@ -23,6 +26,10 @@ const routes: Routes = [
   { path: 'students/new', component: StudentFormComponent },
   { path: 'students/:id', component: StudentDetailComponent },
   { path: 'students/:id/edit', component: StudentFormComponent },
+  { path: 'enroll', component: EnrollmentComponent },
+  { path: 'enrollment-list', component: EnrollmentListComponent },
+  { path: 'assignments', component: AssignmentComponent },
+  { path: 'assignments/:id', component: AssignmentComponent },
   { path: '', redirectTo: '/students', pathMatch: 'full' }
 ];
 

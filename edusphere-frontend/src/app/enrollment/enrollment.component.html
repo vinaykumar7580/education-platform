@@ -1,0 +1,18 @@
+<h2>Enroll in a Course</h2>
+<form (ngSubmit)="enrollStudent()">
+  <label for="course">Select a Course:</label>
+  <select id="course" [(ngModel)]="selectedCourseId" name="course">
+    <option *ngFor="let course of availableCourses" [value]="course.id">{{ course.course_name }}</option>
+  </select>
+
+  <label for="student">Select a Student:</label>
+  <select id="student" [(ngModel)]="selectedStudentId" name="student">
+    <option *ngFor="let student of students" [value]="student.id">{{ student.name }}</option>
+  </select>
+
+  <button type="submit">Enroll</button>
+</form>
+
+<div>
+    <button><a href="/enrollment-list">List of Enrollment Courses and Students</a></button>
+</div>

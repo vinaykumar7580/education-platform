@@ -1,0 +1,27 @@
+
+<!-- <h2>Enrollment List</h2>
+<div *ngFor="let enrollment of enrollments">
+  <h3>Course Name: {{ getCourseNameById(enrollment.course) }}</h3>
+  <h4>Student Name: </h4>
+  <ul>
+    <li> {{ getStudentNameById(enrollment.student) }}</li>
+  </ul>
+</div> -->
+
+
+
+<h2>Enrollment List</h2>
+<div *ngFor="let courseName of courseStudentMap.keys()">
+  <h3>Course Name: {{ courseName }}</h3>
+  <ul>
+    <li *ngFor="let studentName of courseStudentMap.get(courseName)">
+      Student Name: {{ studentName }}
+    </li>
+  </ul>
+</div>
+
+
+
+
+
+

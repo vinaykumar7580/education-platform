@@ -14,6 +14,11 @@ import { CourseFormComponent } from './course-form/course-form.component';
 import { StudentListComponent } from './student-list/student-list.component';
 import { StudentDetailComponent } from './student-detail/student-detail.component';
 import { StudentFormComponent } from './student-form/student-form.component';
+import { EnrollmentListComponent } from './enrollment-list/enrollment-list.component';
+
+import { FormsModule } from '@angular/forms';
+import { EnrollmentComponent } from './enrollment/enrollment.component';
+import { AssignmentComponent } from './assignment/assignment.component';
 
 @NgModule({
   declarations: [
@@ -26,13 +31,17 @@ import { StudentFormComponent } from './student-form/student-form.component';
     CourseFormComponent,
     StudentListComponent,
     StudentDetailComponent,
-    StudentFormComponent
+    StudentFormComponent,
+    EnrollmentListComponent,
+    EnrollmentComponent,
+    AssignmentComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
     ReactiveFormsModule,
+    FormsModule
     
   ],
   providers: [],

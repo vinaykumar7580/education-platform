@@ -1,12 +1,26 @@
-
-
 <div *ngIf="course">
-    <h2>Course Details</h2>
-    <p><strong>Course Code:</strong> {{ course.course_code }}</p>
-    <p><strong>Course Name:</strong> {{ course.course_name }}</p>
-    <p><strong>Department:</strong> {{ course.department.name }}</p>
-    <p><strong>Credits:</strong> {{ course.credits }}</p>
-    <p><strong>Description:</strong> {{ course.description }}</p>
+  <h2>Course Details</h2>
+  <p><strong>Course Code:</strong> {{ course.course_code }}</p>
+  <p><strong>Course Name:</strong> {{ course.course_name }}</p>
+  <p><strong>Department:</strong> {{ course.department.name }}</p>
+  <p><strong>Credits:</strong> {{ course.credits }}</p>
+  <p><strong>Description:</strong> {{ course.description }}</p>
+
+  
 </div>
 <div *ngIf="!course">Course not found.</div>
-  
+
+<div>
+    <h2>Assignments for Course</h2>
+    
+    
+    <ul>
+        <li *ngFor="let assignment of assignments">
+            {{ assignment.title }}
+        </li>
+        
+          
+    </ul>
+    <p><a [routerLink]="['/assignments',]">View Assignments</a></p>
+</div>
+

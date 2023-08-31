@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Course } from '../course.model';
 import { ActivatedRoute } from '@angular/router';
 import { CourseService } from '../course.service';
+import { AssignmentService } from '../assignment.service';
 
 @Component({
   selector: 'app-course-detail',
@@ -10,10 +11,14 @@ import { CourseService } from '../course.service';
 })
 export class CourseDetailComponent implements OnInit{
   course: Course | null = null;
+  assignments: any[] = [];
+  
 
   constructor(
     private route: ActivatedRoute,
-    private courseService: CourseService
+    private courseService: CourseService,
+    private assignmentService: AssignmentService
+    
   ) {}
 
   ngOnInit(): void {
@@ -23,12 +28,15 @@ export class CourseDetailComponent implements OnInit{
       const courseId = +courseIdParam;
       if (!isNaN(courseId)) {
         this.loadCourseDetails(courseId);
+        this.fetchAssignments(courseId);
       } else {
         console.error('Invalid course ID:', courseIdParam);
       }
     } else {
       console.error('Course ID is missing.');
     }
+
+    
   }
 
   loadCourseDetails(courseId: number): void {
@@ -41,4 +49,19 @@ export class CourseDetailComponent implements OnInit{
       }
     );
   }
+
+  fetchAssignments(courseId: number): void {
+    this.assignmentService
+      .getAssignmentsForCourse(courseId)
+      .subscribe((assignments) => {
+        this.assignments = assignments;
+        console.log("ddddddddddd", this.assignments)
+      },
+      (error) => {
+        console.error('Error loading course details:', error);
+      }
+      );
+  }
+
+
 }
