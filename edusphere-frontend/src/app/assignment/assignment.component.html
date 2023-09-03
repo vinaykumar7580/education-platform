@@ -1,54 +1,92 @@
-<h2>Assignment List</h2>
-<div *ngFor="let assignment of assignments">
-  <p>Name: {{ assignment.title }}</p>
-  <p>Description: {{ assignment.description }}</p>
-  <p>Due Date: {{ assignment.due_date }}</p>
-  <button (click)="updateAssignment(assignment.id, { description: 'completed' })">
-    Update
-  </button>
-  <button (click)="deleteAssignment(assignment.id)">Delete</button>
+
+<div class="body">
+  <div class="navbar">
+    <p class="navbar-head">EduSphere</p>
+    <div class="navbar-buttons">
+      <button><a class="nav-anchor" href="instructors">Instructor</a></button>
+      <button><a class="nav-anchor" href="courses">Courses</a></button>
+      <button><a class="nav-anchor" href="students">Student</a></button>
+      <button><a class="nav-anchor" href="enrollment-list">Enrollment</a></button>
+      <button><a class="nav-anchor" href="assignments">Assignments</a></button>
+      <button><a class="nav-anchor" href="submissions">Submissions</a></button>
+      <button><a class="nav-anchor" href="announcements">Announcements</a></button>
+      <button><a class="nav-anchor" href="departments">Departments</a></button>
+    </div>
+  </div>
+<div class="create-assignment">
+  <h2>Create Assignment</h2>
+  <br>
+  <form (submit)="createAssignment()">
+    <label for="title">Title:</label>
+    <br />
+    <input
+      type="text"
+      id="title"
+      [(ngModel)]="newAssignment.title"
+      name="title"
+      required
+    />
+    <br />
+    <br />
+    <label for="description">Description:</label>
+    <br />
+    <textarea
+      id="description"
+      [(ngModel)]="newAssignment.description"
+      name="description"
+      required
+    ></textarea>
+    <br />
+    <br />
+    <label for="due_date">Due Date:</label>
+    <br />
+    <input
+      type="date"
+      id="due_date"
+      [(ngModel)]="newAssignment.due_date"
+      name="due_date"
+      required
+    />
+    <br />
+    <br />
+    <label for="course">Course:</label>
+    <br />
+    <select
+      id="course"
+      [(ngModel)]="newAssignment.course"
+      name="course"
+      required
+    >
+      <option *ngFor="let course of courses" [value]="course.id">
+        {{ course.course_name }}
+      </option>
+    </select>
+    <br />
+    <br />
+    <button type="submit" class="list-button">Create Assignment</button>
+  </form>
 </div>
 
-<!-- <form (ngSubmit)="createAssignment()">
-    <input type="text" placeholder="Title" [(ngModel)]="newAssignment.title" name="title" />
-    <input type="text" placeholder="Description" [(ngModel)]="newAssignment.description" name="description" />
-    <input type="date" [(ngModel)]="newAssignment.due_date" name="due_date" />
-    <button type="submit">Create Assignment</button>
-</form> -->
-
-<form (submit)="createAssignment()">
-  <label for="title">Title:</label>
-  <input
-    type="text"
-    id="title"
-    [(ngModel)]="newAssignment.title"
-    name="title"
-    required
-  />
-
-  <label for="description">Description:</label>
-  <textarea
-    id="description"
-    [(ngModel)]="newAssignment.description"
-    name="description"
-    required
-  ></textarea>
-
-  <label for="due_date">Due Date:</label>
-  <input
-    type="date"
-    id="due_date"
-    [(ngModel)]="newAssignment.due_date"
-    name="due_date"
-    required
-  />
-
-  <label for="course">Course:</label>
-  <select id="course" [(ngModel)]="newAssignment.course" name="course" required>
-    <option *ngFor="let course of courses" [value]="course.id">
-      {{ course.course_name }}
-    </option>
-  </select>
-
-  <button type="submit">Create Assignment</button>
-</form>
+<div class="assignment-list">
+  <h2>Assignment List</h2>
+  <br>
+  <div class="grid-list">
+    <div class="grid-list-child" *ngFor="let assignment of assignments">
+      <p>Name: {{ assignment.title }}</p>
+      <p>Description: {{ assignment.description }}</p>
+      <p>Due Date: {{ assignment.due_date }}</p>
+      <button
+        class="list-button"
+        (click)="updateAssignment(assignment.id, { description: 'completed' })"
+      >
+        Update
+      </button>
+      <button class="list-button" (click)="deleteAssignment(assignment.id)">
+        Delete
+      </button>
+    </div>
+  </div>
+</div>
+<br>
+<br>
+</div>

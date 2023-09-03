@@ -1,41 +1,109 @@
-
-.student-list{
-    width: 60%;
+.body {
+    height: fit-content;
+    background: rgb(2, 0, 36);
+    background: linear-gradient(
+      90deg,
+      rgba(2, 0, 36, 1) 0%,
+      rgba(9, 9, 121, 1) 35%,
+      rgba(0, 212, 255, 1) 100%
+    );
+  }
+  .navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0px 130px;
+    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+    border-bottom: 1px dotted white;
+  }
+  
+  .navbar-buttons {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 10px;
+  }
+  
+  .navbar-head {
+    font-size: 30px;
+    font-weight: bold;
+    font-family: cursive;
+    color: white;
+  }
+  
+  h3 {
+    color: white;
+  }
+  
+  h2 {
     text-align: center;
     margin: auto;
-    padding:30px;
-    box-shadow: rgba(0, 0, 0, 0.07) 0px 1px 2px, rgba(0, 0, 0, 0.07) 0px 2px 4px, rgba(0, 0, 0, 0.07) 0px 4px 8px, rgba(0, 0, 0, 0.07) 0px 8px 16px, rgba(0, 0, 0, 0.07) 0px 16px 32px, rgba(0, 0, 0, 0.07) 0px 32px 64px;
-    
-}
-h1{
-    color: blueviolet;
-}
-a{
-    margin-right: 10px;
-}
-thead>tr>th{
-    background-color: blueviolet;
     color: white;
-    padding:5px 70px;
-}
-td{
-    padding:10px;
+  }
+  
+  button {
+    padding: 10px 5px;
+    font-size: 15px;
+    /* background-color: rgba(9, 9, 121, 1); */
+    background-color: transparent;
+    border: 1px dotted white;
+    color: white;
     font-weight: bold;
-}
-
-tbody>tr:nth-child(even) {
-    background-color: aqua;
-
-}
-button{
-    background-color:green ;
-    color: white;
-    border: none;
-    padding:5px 10px;
-    border-radius: 5px;
     cursor: pointer;
+    margin-right: 10px;
+    border-radius: 5px;
+  }
+  
+  a {
+    color: white;
+    margin-right: 5px;
+    margin-left: 5px;
+  }
+  .nav-anchor {
+    text-decoration: none;
+  }
+  .student-list {
+    width: 67%;
+    text-align: center;
+    margin: auto;
+    padding: 30px;
+    color: white;
+    margin-top: 50px;
+    margin-bottom: 50px;
+    border: 5px solid white;
+    box-shadow: rgba(0, 0, 0, 0.07) 0px 1px 2px, rgba(0, 0, 0, 0.07) 0px 2px 4px,
+      rgba(0, 0, 0, 0.07) 0px 4px 8px, rgba(0, 0, 0, 0.07) 0px 8px 16px,
+      rgba(0, 0, 0, 0.07) 0px 16px 32px, rgba(0, 0, 0, 0.07) 0px 32px 64px;
+  }
+  .table{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .course-list-name{
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+  }
+  /* h1 {
+    color: blueviolet;
+  } */
+  
+  thead > tr > th {
+    background-color: rgba(0, 212, 255, 1);
+    color: white;
+    padding: 20px 70px;
+    font-size: 18px;
+    color: rgba(9, 9, 121, 1);
     font-weight: bold;
-}
-/* tbody>tr>td:nth-of-type(odd){
-    background-color: aqua;
-} */
+  }
+  td {
+    padding: 10px;
+    font-weight: bold;
+    font-size: 17px;
+  }
+  
+  tbody > tr:nth-child(even) {
+    background-color: rgba(0, 212, 255, 1);
+  }
+  

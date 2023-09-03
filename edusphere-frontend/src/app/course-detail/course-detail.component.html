@@ -1,26 +1,40 @@
-<div *ngIf="course">
-  <h2>Course Details</h2>
-  <p><strong>Course Code:</strong> {{ course.course_code }}</p>
-  <p><strong>Course Name:</strong> {{ course.course_name }}</p>
-  <p><strong>Department:</strong> {{ course.department.name }}</p>
-  <p><strong>Credits:</strong> {{ course.credits }}</p>
-  <p><strong>Description:</strong> {{ course.description }}</p>
+<div class="body">
+  <div class="navbar">
+    <p class="navbar-head">EduSphere</p>
+    <div class="navbar-buttons">
+      <button><a class="nav-anchor" href="instructors">Instructor</a></button>
+      <button><a class="nav-anchor" href="courses">Courses</a></button>
+      <button><a class="nav-anchor" href="students">Student</a></button>
+      <button><a class="nav-anchor" href="enrollment-list">Enrollment</a></button>
+      <button><a class="nav-anchor" href="assignments">Assignments</a></button>
+      <button><a class="nav-anchor" href="submissions">Submissions</a></button>
+      <button><a class="nav-anchor" href="announcements">Announcements</a></button>
+      <button><a class="nav-anchor" href="departments">Departments</a></button>
+    </div>
+  </div>
+  <div class="course-detail">
+    <div *ngIf="course">
+      <h2>Course Details</h2>
+      <p><strong>Course Code:</strong> {{ course.course_code }}</p>
+      <p><strong>Course Name:</strong> {{ course.course_name }}</p>
+      <p><strong>Department:</strong> {{ getDepartmentNameById(course.department) }}</p>
+      <p><strong>Credits:</strong> {{ course.credits }}</p>
+      <p><strong>Description:</strong> {{ course.description }}</p>
+    </div>
+    <div *ngIf="!course">Course not found.</div>
 
-  
-</div>
-<div *ngIf="!course">Course not found.</div>
+    <br />
+    <div>
+      <h2>Assignments for Course</h2>
 
-<div>
-    <h2>Assignments for Course</h2>
-    
-    
-    <ul>
+      <ul>
         <li *ngFor="let assignment of assignments">
-            {{ assignment.title }}
+          {{ assignment.title }}
         </li>
-        
-          
-    </ul>
-    <p><a [routerLink]="['/assignments',]">View Assignments</a></p>
+      </ul>
+      <!-- <p><a [routerLink]="['/assignments',]">View Assignments</a></p> -->
+    </div>
+  </div>
+  <br>
+  <br>
 </div>
-

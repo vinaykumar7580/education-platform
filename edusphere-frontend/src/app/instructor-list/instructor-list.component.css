@@ -44,12 +44,12 @@ h2 {
 button {
   padding: 10px 5px;
   font-size: 15px;
-  background-color: rgba(9, 9, 121, 1);
-  border: none;
+  background-color: transparent;
+  border: 1px dotted white;
   color: white;
   font-weight: bold;
   cursor: pointer;
-  margin-right: 20px;
+  margin-right: 10px;
   border-radius: 5px;
 }
 
@@ -74,6 +74,12 @@ a {
     rgba(0, 0, 0, 0.07) 0px 4px 8px, rgba(0, 0, 0, 0.07) 0px 8px 16px,
     rgba(0, 0, 0, 0.07) 0px 16px 32px, rgba(0, 0, 0, 0.07) 0px 32px 64px;
 }
+.table{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 h1 {
   color: blueviolet;
 }
@@ -83,6 +89,8 @@ thead > tr > th {
   color: white;
   padding: 20px 70px;
   font-size: 18px;
+  color: rgba(9, 9, 121, 1);
+  font-weight: bold;
 }
 td {
   padding: 10px;

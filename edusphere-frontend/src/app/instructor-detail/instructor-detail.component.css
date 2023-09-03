@@ -45,12 +45,12 @@ h2 {
 button {
   padding: 10px 5px;
   font-size: 15px;
-  background-color: rgba(9, 9, 121, 1);
-  border: none;
+  background-color: transparent;
+  border: 1px dotted white;
   color: white;
   font-weight: bold;
   cursor: pointer;
-  margin-right: 20px;
+  margin-right: 10px;
   border-radius: 5px;
 }
 

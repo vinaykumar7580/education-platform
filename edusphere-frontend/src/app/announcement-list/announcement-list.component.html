@@ -1,0 +1,38 @@
+
+
+<div class="body">
+    <div class="navbar">
+      <p class="navbar-head">EduSphere</p>
+      <div class="navbar-buttons">
+        <button><a class="nav-anchor" href="enroll">Enrollment</a></button>
+      <button>
+        <a class="nav-anchor" href="assignments-list">Assignment</a>
+      </button>
+      <button>
+        <a class="nav-anchor" href="submissions-form">Submission</a>
+      </button>
+      <button>
+        <a class="nav-anchor" href="announcements-list">Announcement</a>
+      </button>
+      </div>
+    </div>
+    
+  
+    <div class="announcement-list">
+      <h2>Announcements</h2>
+      <br>
+      <div class="grid-list">
+        <div class="grid-list-child" *ngFor="let announcement of announcements">
+          <h3>Title: {{ announcement.title }}</h3>
+          <h4>Description: {{ announcement.description }}</h4>
+          <h4>Publish Date: {{ announcement.publish_date }}</h4>
+          <!-- <p>Department: {{ getDepartmentName(announcement.department) }}</p> -->
+          <p>Course: {{ getCourseName(announcement.course) }}</p>
+        </div>
+      </div>
+    </div>
+    <br>
+    <br>
+    <br>
+  </div>
+  

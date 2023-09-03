@@ -1,28 +1,43 @@
+<div class="body">
+  <div class="navbar">
+    <p class="navbar-head">EduSphere</p>
+    <div class="navbar-buttons">
+      <button><a class="nav-anchor" href="instructors">Instructor</a></button>
+      <button><a class="nav-anchor" href="courses">Courses</a></button>
+      <button><a class="nav-anchor" href="students">Student</a></button>
+      <button>
+        <a class="nav-anchor" href="enrollment-list">Enrollment</a>
+      </button>
+      <button><a class="nav-anchor" href="assignments">Assignments</a></button>
+      <button><a class="nav-anchor" href="submissions">Submissions</a></button>
+      <button>
+        <a class="nav-anchor" href="announcements">Announcements</a>
+      </button>
+      <button><a class="nav-anchor" href="departments">Departments</a></button>
+    </div>
+  </div>
+  <div class="department-form">
+    <h2>Departments</h2>
+    <br>
+    <form (submit)="createDepartment()">
+      <label for="name">Department Name:</label>
+      <br />
+      <input
+        type="text"
+        id="name"
+        [(ngModel)]="newDepartment.name"
+        name="name"
+        required
+      />
+      <br />
+      <br />
+      <button type="submit" class="list-button">Create Department</button>
+    </form>
+    <br />
 
-<br>
-<div class="department-form">
-<h2>Departments</h2>
-
-<form (submit)="createDepartment()">
-  <label for="name">Department Name:</label>
-  <br>
-  <input type="text" id="name" [(ngModel)]="newDepartment.name" name="name" required />
-  <br>
-  <br>
-  <button type="submit">Create Department</button>
-</form>
-<br>
-
-<h3>Departments List</h3>
-<ul>
-  <li *ngFor="let department of departments">{{ department.name }}</li>
-</ul>
-<br>
-<br>
-<button><a href="/students">Students List</a></button>
-<button><a href="/instructors">Instructor List</a></button>
-<br>
-<br>
-<button><a href="/enrollment-list">Enrollment List</a></button>
+    <h3>Departments List</h3>
+    <ul>
+      <li *ngFor="let department of departments">{{ department.name }}</li>
+    </ul>
+  </div>
 </div>
-

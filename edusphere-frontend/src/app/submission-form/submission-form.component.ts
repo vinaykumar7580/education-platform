@@ -1,17 +1,16 @@
 import { Component, OnInit } from '@angular/core';
+import { Submission } from '../submission.model';
 import { SubmissionService } from '../submission.service';
 import { AssignmentService } from '../assignment.service';
 import { StudentService } from '../student.service';
-import { Submission } from '../submission.model';
-
 
 @Component({
-  selector: 'app-submission',
-  templateUrl: './submission.component.html',
-  styleUrls: ['./submission.component.css']
+  selector: 'app-submission-form',
+  templateUrl: './submission-form.component.html',
+  styleUrls: ['./submission-form.component.css']
 })
-export class SubmissionComponent implements OnInit{
-  newSubmission: Submission = {
+export class SubmissionFormComponent implements OnInit{
+  newSubmission: Submission = { 
     submission_date: '',
     status: 'Submitted',
     remarks: '',

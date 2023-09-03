@@ -1,0 +1,83 @@
+
+
+
+.body {
+    height: 100vh;
+    background: rgb(2, 0, 36);
+    background: linear-gradient(
+      90deg,
+      rgba(2, 0, 36, 1) 0%,
+      rgba(9, 9, 121, 1) 35%,
+      rgba(0, 212, 255, 1) 100%
+    );
+  }
+  .navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0px 130px;
+    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+    border-bottom: 1px dotted white;
+  }
+  
+  .navbar-buttons {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 10px;
+  }
+  
+  .navbar-head {
+    font-size: 30px;
+    font-weight: bold;
+    font-family: cursive;
+    color: white;
+  }
+  
+  h3 {
+    color: white;
+  }
+  
+  h2 {
+    text-align: center;
+    margin: auto;
+    color: white;
+  }
+  
+  button {
+    padding: 10px 5px;
+    font-size: 15px;
+    background-color: transparent;
+    border: 1px dotted white;
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+    margin-right: 10px;
+    border-radius: 5px;
+  }
+  
+  a {
+    color: white;
+    margin-right: 5px;
+    margin-left: 5px;
+  }
+  .nav-anchor {
+    text-decoration: none;
+  }
+
+  .course-detail{
+    width: 25%;
+    margin: auto;
+    padding: 30px;
+    font-weight: bold;
+    font-size: large;
+    margin-top: 50px;
+    border: 5px solid white;
+    color: white;
+    box-shadow: rgba(0, 0, 0, 0.07) 0px 1px 2px, rgba(0, 0, 0, 0.07) 0px 2px 4px, rgba(0, 0, 0, 0.07) 0px 4px 8px, rgba(0, 0, 0, 0.07) 0px 8px 16px, rgba(0, 0, 0, 0.07) 0px 16px 32px, rgba(0, 0, 0, 0.07) 0px 32px 64px;
+}
+h2{
+    color: white;
+    text-align: left;
+}
+

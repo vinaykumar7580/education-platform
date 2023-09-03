@@ -16,6 +16,9 @@ import { SubmissionComponent } from './submission/submission.component';
 import { AnnouncementComponent } from './announcement/announcement.component';
 import { DepartmentComponent } from './department/department.component';
 import { HomeComponent } from './home/home.component';
+import { SubmissionFormComponent } from './submission-form/submission-form.component';
+import { AssignmentListComponent } from './assignment-list/assignment-list.component';
+import { AnnouncementListComponent } from './announcement-list/announcement-list.component';
 
 const routes: Routes = [
   { path: 'instructors', component: InstructorListComponent },
@@ -34,8 +37,11 @@ const routes: Routes = [
   { path: 'enrollment-list', component: EnrollmentListComponent },
   { path: 'assignments', component: AssignmentComponent },
   { path: 'assignments/:id', component: AssignmentComponent },
+  { path: 'assignments-list', component: AssignmentListComponent },
   { path: 'submissions', component: SubmissionComponent },
+  { path: 'submissions-form', component: SubmissionFormComponent},
   { path: 'announcements', component: AnnouncementComponent },
+  { path: 'announcements-list', component: AnnouncementListComponent },
   { path: 'departments', component: DepartmentComponent },
   { path: 'home', component: HomeComponent },
   { path: '', redirectTo: '/home', pathMatch: 'full' }

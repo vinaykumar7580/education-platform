@@ -66,22 +66,23 @@ input{
 button{
     padding:10px 20px;
     font-size: 15px;
-    background-color:rgba(9, 9, 121, 1);
-    border: none;
+    background-color: transparent;
+    border: 1px dotted white;
     color: white;
     font-weight: bold;
     cursor: pointer;
-    margin-right: 20px;
+    margin-right: 10px;
     border-radius: 5px;
 
 }
 .list-button{
-    padding:5px 10px;
-    font-size: 15px;
-    background-color:blueviolet;
-    border: none;
-    font-weight: bold;
-    border-radius: 5px;
+  padding:12px 30px;
+  font-size: 15px;
+  background-color:rgba(9, 9, 121, 1);
+  border: none;
+  font-weight: bold;
+  border-radius: 50px;
+  border: 1px solid white;
 }
 a{
     text-decoration: none;

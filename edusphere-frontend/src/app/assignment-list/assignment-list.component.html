@@ -1,0 +1,44 @@
+<div class="body">
+  <div class="navbar">
+    <p class="navbar-head">EduSphere</p>
+    <div class="navbar-buttons">
+      <button><a class="nav-anchor" href="enroll">Enrollment</a></button>
+      <button>
+        <a class="nav-anchor" href="assignments-list">Assignment</a>
+      </button>
+      <button>
+        <a class="nav-anchor" href="submissions-form">Submission</a>
+      </button>
+      <button>
+        <a class="nav-anchor" href="announcements-list">Announcement</a>
+      </button>
+    </div>
+  </div>
+
+  <div class="assignment-list">
+    <h2>Assignment List</h2>
+    <br />
+    <div class="grid-list">
+      <div class="grid-list-child" *ngFor="let assignment of assignments">
+        <p>Name: {{ assignment.title }}</p>
+        <p>Description: {{ assignment.description }}</p>
+        <p>Due Date: {{ assignment.due_date }}</p>
+        <!-- <button
+          class="list-button"
+          (click)="
+            updateAssignment(assignment.id, { description: 'completed' })
+          "
+        >
+          Update
+        </button>
+        <button class="list-button" (click)="deleteAssignment(assignment.id)">
+          Delete
+        </button> -->
+      </div>
+    </div>
+  </div>
+  <br />
+  <br />
+  <br>
+  <br>
+</div>

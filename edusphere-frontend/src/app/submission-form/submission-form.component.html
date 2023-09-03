@@ -1,0 +1,85 @@
+<div class="body">
+  <div class="navbar">
+    <p class="navbar-head">EduSphere</p>
+    <div class="navbar-buttons">
+      <button><a class="nav-anchor" href="enroll">Enrollment</a></button>
+      <button>
+        <a class="nav-anchor" href="assignments-list">Assignment</a>
+      </button>
+      <button>
+        <a class="nav-anchor" href="submissions-form">Submission</a>
+      </button>
+      <button>
+        <a class="nav-anchor" href="announcements-list">Announcement</a>
+      </button>
+    </div>
+  </div>
+  <div class="submission-form">
+    <h2>Assignment Submission</h2>
+    <br>
+    <form (submit)="createSubmission()">
+      <label for="submissionDate">Submission Date:</label>
+      <br>
+      <input
+        type="date"
+        id="submissionDate"
+        [(ngModel)]="newSubmission.submission_date"
+        name="submissionDate"
+        required
+      />
+      <br>
+      <br>
+      <label for="status">Status:</label>
+      <select
+        id="status"
+        [(ngModel)]="newSubmission.status"
+        name="status"
+        required
+      >
+        <option value="Submitted">Submitted</option>
+        <option value="Late">Late</option>
+        <option value="Graded">Graded</option>
+      </select>
+      <br>
+      <br>
+      <label for="remarks">Remarks:</label>
+      <textarea
+        id="remarks"
+        [(ngModel)]="newSubmission.remarks"
+        name="remarks"
+        required
+      ></textarea>
+      <br>
+      <br>
+      <label for="assignment">Assignment:</label>
+      <select
+        id="assignment"
+        [(ngModel)]="newSubmission.assignment"
+        name="assignment"
+        required
+      >
+        <option *ngFor="let assignment of assignments" [value]="assignment.id">
+          {{ assignment.title }}
+        </option>
+      </select>
+      <br>
+      <br>
+      <label for="student">Student:</label>
+      <select
+        id="student"
+        [(ngModel)]="newSubmission.student"
+        name="student"
+        required
+      >
+        <option *ngFor="let student of students" [value]="student.id">
+          {{ student.name }}
+        </option>
+      </select>
+      <br>
+      <br>
+      <button type="submit" class="list-button">Create Submission</button>
+    </form>
+  </div>
+  <br>
+  <br>
+</div>

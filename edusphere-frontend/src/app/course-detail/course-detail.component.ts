@@ -3,6 +3,8 @@ import { Course } from '../course.model';
 import { ActivatedRoute } from '@angular/router';
 import { CourseService } from '../course.service';
 import { AssignmentService } from '../assignment.service';
+import { Department } from '../department.service';
+import { DepartmentService } from '../department.service';
 
 @Component({
   selector: 'app-course-detail',
@@ -12,12 +14,14 @@ import { AssignmentService } from '../assignment.service';
 export class CourseDetailComponent implements OnInit{
   course: Course | null = null;
   assignments: any[] = [];
+  departments: Department[]=[]
   
 
   constructor(
     private route: ActivatedRoute,
     private courseService: CourseService,
-    private assignmentService: AssignmentService
+    private assignmentService: AssignmentService,
+    private departmentService:DepartmentService
     
   ) {}
 
@@ -29,6 +33,7 @@ export class CourseDetailComponent implements OnInit{
       if (!isNaN(courseId)) {
         this.loadCourseDetails(courseId);
         this.fetchAssignments(courseId);
+        this.fetchDepartments();
       } else {
         console.error('Invalid course ID:', courseIdParam);
       }
@@ -62,6 +67,18 @@ export class CourseDetailComponent implements OnInit{
       }
       );
   }
+
+  fetchDepartments(): void {
+    this.departmentService.getDepartments().subscribe((departments) => {
+      this.departments = departments;
+    });
+  }
+
+  getDepartmentNameById(departmentId: any): string {
+    const department = this.departments.find(depart => depart.id === departmentId);
+    return department ? department.name : 'Unknown Department';
+  }
+ 
 
 
 }

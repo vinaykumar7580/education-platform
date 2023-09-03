@@ -46,7 +46,7 @@ a {
   
 }
 .navbar-button:hover{
-    background-color: blueviolet;
+    background-color: rgba(0, 212, 255, 1);
 }
 h3{
     color: #FFFFFF;
@@ -99,6 +99,6 @@ h1{
 }
 p{
     color: white;
-    font-size: 19px;
+    font-size: 17px;
     font-family: sans-serif;
 }
