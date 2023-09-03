@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { InstructorService } from '../instructor.service';
+import { Department, DepartmentService } from '../department.service';
 
 @Component({
   selector: 'app-instructor-list',
@@ -8,11 +9,13 @@ import { InstructorService } from '../instructor.service';
 })
 export class InstructorListComponent implements OnInit {
   instructors:any[]=[]
+  departments:Department[]=[]
 
-  constructor(private instructorService: InstructorService){ }
+  constructor(private instructorService: InstructorService, private departmentService:DepartmentService){ }
 
   ngOnInit(): void {
     this.loadInstructors();
+    this.fetchDepartments()
   }
 
   loadInstructors(): void {
@@ -37,6 +40,17 @@ export class InstructorListComponent implements OnInit {
         }
       )
     }
+  }
+
+  fetchDepartments(): void {
+    this.departmentService.getDepartments().subscribe((departments) => {
+      this.departments = departments;
+    });
+  }
+
+  getDepartmentNameById(departmentId: number): string {
+    const department = this.departments.find(depart => depart.id === departmentId);
+    return department ? department.name : 'Unknown Department';
   }
 
 }

@@ -1,28 +1,22 @@
+<div class="student-details">
+  <h1>Student Details</h1>
+  <div *ngIf="student">
+    <dl class="row">
+      <h3 class="col-sm-9">Name: {{ student.name }}</h3>
+      <h3 class="col-sm-9">Gender: {{ student.gender }}</h3>
+      <h3 class="col-sm-9">DOB: {{ student.dob }}</h3>
 
+      <h3 class="col-sm-9">Major: {{ student.major }}</h3>
 
-<h2>Student Details</h2>
-<div *ngIf="student">
-  <dl class="row">
-    <dt class="col-sm-3">Name</dt>
-    <dd class="col-sm-9">{{ student.name }}</dd>
+      <h3 class="col-sm-9">Email: {{ student.email }}</h3>
 
-    <dt class="col-sm-3">Gender</dt>
-    <dd class="col-sm-9">{{ student.gender }}</dd>
-
-    <dt class="col-sm-3">DOB</dt>
-    <dd class="col-sm-9">{{ student.dob }}</dd>
-
-    <dt class="col-sm-3">Major</dt>
-    <dd class="col-sm-9">{{ student.major }}</dd>
-
-    <dt class="col-sm-3">Email</dt>
-    <dd class="col-sm-9">{{ student.email }}</dd>
-
-    <dt class="col-sm-3">Contact Number</dt>
-    <dd class="col-sm-9">{{ student.contact_number }}</dd>
-  </dl>
+      <h3 class="col-sm-9">Contact Number: {{ student.contact_number }}</h3>
+    </dl>
+  </div>
+  <br />
+  <div class="text-right">
+    <button>
+      <a routerLink="/students" class="btn btn-primary">Back to List</a>
+    </button>
+  </div>
 </div>
-<div class="text-right">
-  <a routerLink="/students" class="btn btn-primary">Back to List</a>
-</div>
-

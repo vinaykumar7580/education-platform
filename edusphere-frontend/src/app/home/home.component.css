@@ -1,0 +1,104 @@
+
+.body{
+    background: rgb(2, 0, 36);
+  background: linear-gradient(
+    90deg,
+    rgba(2, 0, 36, 1) 0%,
+    rgba(9, 9, 121, 1) 35%,
+    rgba(0, 212, 255, 1) 100%
+  );
+}
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0px 130px;
+  box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+  border-bottom: 1px dotted white;
+ 
+}
+
+.navbar-buttons {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 40px;
+}
+
+.navbar-head {
+  font-size: 30px;
+  font-weight: bold;
+  font-family: cursive;
+  color: white;
+}
+a {
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 18px;
+  color: white;
+}
+.navbar-button {
+  padding: 15px 30px;
+  border: 1px solid white;
+  border-radius: 50px;
+  background-color: transparent;
+  margin-right: 30px;
+  
+}
+.navbar-button:hover{
+    background-color: blueviolet;
+}
+h3{
+    color: #FFFFFF;
+}
+
+.container{
+    width: 70%;
+    margin: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+}
+.container-first-box{
+    width: 40%;
+    margin-top: 50px;
+    margin-bottom: 50px;
+}
+.container-second-box{
+    width: 60%;
+    margin-top: 50px;
+    margin-bottom: 50px;
+    border:10px solid white;
+
+}
+img{
+    width: 100%;
+}
+h2{
+    color: orange;
+}
+h1{
+    color: white;
+    font-size: 40px;
+    font-family: sans-serif;
+}
+
+.container-third-box{
+    width: 40%;
+    margin-top: 50px;
+    margin-bottom: 50px;
+    border:10px solid white;
+
+}
+.container-fourth-box{
+    width: 60%;
+    padding:0px 50px;
+    margin-top: 50px;
+    margin-bottom: 50px;
+}
+p{
+    color: white;
+    font-size: 19px;
+    font-family: sans-serif;
+}

@@ -1,14 +1,28 @@
 
+<br>
+<div class="department-form">
 <h2>Departments</h2>
 
 <form (submit)="createDepartment()">
   <label for="name">Department Name:</label>
+  <br>
   <input type="text" id="name" [(ngModel)]="newDepartment.name" name="name" required />
-
+  <br>
+  <br>
   <button type="submit">Create Department</button>
 </form>
+<br>
 
+<h3>Departments List</h3>
 <ul>
   <li *ngFor="let department of departments">{{ department.name }}</li>
 </ul>
+<br>
+<br>
+<button><a href="/students">Students List</a></button>
+<button><a href="/instructors">Instructor List</a></button>
+<br>
+<br>
+<button><a href="/enrollment-list">Enrollment List</a></button>
+</div>
 

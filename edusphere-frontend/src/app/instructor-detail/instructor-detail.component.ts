@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { InstructorService } from '../instructor.service';
+import { Department, DepartmentService } from '../department.service';
 
 @Component({
   selector: 'app-instructor-detail',
@@ -9,33 +10,14 @@ import { InstructorService } from '../instructor.service';
 })
 export class InstructorDetailComponent implements OnInit {
   instructor: any;
+  departments:Department[]=[]
 
   constructor(
     private route: ActivatedRoute,
-    private instructorService: InstructorService
+    private instructorService: InstructorService,
+    private departmentService:DepartmentService
   ) {}
 
-  // ngOnInit(): void {
-  //   const instructorIdParam = this.route.snapshot.paramMap.get('id');
-  //   if (instructorIdParam !== null) {
-  //     const instructorId = +instructorIdParam;
-  //     this.loadInstructor(instructorId);
-  //   } else {
-  //     console.error('Instructor ID is missing.');
-
-  //   }
-  // }
-
-  // loadInstructor(id: number): void {
-  //   this.instructorService.getInstructor(id).subscribe(
-  //     (data: any) => {
-  //       this.instructor = data;
-  //     },
-  //     (error) => {
-  //       console.log('Error loading instructor:', error);
-  //     }
-  //   );
-  // }
 
   ngOnInit(): void {
     const instructorIdParam = this.route.snapshot.paramMap.get('id');
@@ -44,6 +26,7 @@ export class InstructorDetailComponent implements OnInit {
       const instructorId = +instructorIdParam;
       if (!isNaN(instructorId)) {
         this.loadInstructor(instructorId);
+        this.fetchDepartments()
       } else {
         console.error('Invalid instructor ID:', instructorIdParam);
         
@@ -64,5 +47,16 @@ export class InstructorDetailComponent implements OnInit {
         console.error('Error loading instructor:', error);
       }
     );
+  }
+
+  fetchDepartments(): void {
+    this.departmentService.getDepartments().subscribe((departments) => {
+      this.departments = departments;
+    });
+  }
+
+  getDepartmentNameById(departmentId: number): string {
+    const department = this.departments.find(depart => depart.id === departmentId);
+    return department ? department.name : 'Unknown Department';
   }
 }

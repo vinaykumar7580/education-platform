@@ -22,6 +22,7 @@ import { AssignmentComponent } from './assignment/assignment.component';
 import { SubmissionComponent } from './submission/submission.component';
 import { AnnouncementComponent } from './announcement/announcement.component';
 import { DepartmentComponent } from './department/department.component';
+import { HomeComponent } from './home/home.component';
 
 @NgModule({
   declarations: [
@@ -41,6 +42,7 @@ import { DepartmentComponent } from './department/department.component';
     SubmissionComponent,
     AnnouncementComponent,
     DepartmentComponent,
+    HomeComponent,
   ],
   imports: [
     BrowserModule,

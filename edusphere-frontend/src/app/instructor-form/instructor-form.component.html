@@ -1,33 +1,100 @@
-
-
-<h2>{{ isEditMode ? 'Edit Instructor' : 'Add Instructor' }}</h2>
-<form [formGroup]="instructorForm" (ngSubmit)="saveInstructor()">
-  <div class="form-group">
-    <label for="name">Name</label>
-    <input type="text" id="name" formControlName="name" class="form-control" required>
+<div class="body">
+  <div class="navbar">
+    <p class="navbar-head">EduSphere</p>
+    <div class="navbar-buttons">
+      <button><a href="instructors/new">Register</a></button>
+      <button><a href="instructors/login">Login</a></button>
+    </div>
   </div>
-  <div class="form-group">
-    <label for="gender">Gender</label>
-    <input type="text" id="gender" formControlName="gender" class="form-control">
+  <div class="instructor-form">
+    <h2>{{ isEditMode ? "Edit Instructor" : "Register Instructor" }}</h2>
+    <form [formGroup]="instructorForm" (ngSubmit)="saveInstructor()">
+      <br />
+      <div class="form-group">
+        <label for="name">Name</label>
+        <br />
+        <input
+          type="text"
+          id="name"
+          formControlName="name"
+          class="form-control"
+          required
+        />
+      </div>
+      <br />
+      <div class="form-group">
+        <label for="gender">Gender</label>
+        <br />
+        <input
+          type="text"
+          id="gender"
+          formControlName="gender"
+          class="form-control"
+        />
+      </div>
+      <br />
+      <div class="form-group">
+        <label for="dob">Date of Birth</label>
+        <br />
+        <input
+          type="date"
+          id="dob"
+          formControlName="dob"
+          class="form-control"
+        />
+      </div>
+      <br />
+      <div class="form-group">
+        <label for="department">Department</label>
+        <br />
+        <select
+          id="department"
+          class="form-control"
+          formControlName="department"
+        >
+          <option
+            *ngFor="let department of departments"
+            [value]="department.id"
+          >
+            {{ department.name }}
+          </option>
+        </select>
+        <!-- <input type="text" id="department" formControlName="department" class="form-control"> -->
+      </div>
+      <br />
+      <div class="form-group">
+        <label for="email">Email</label>
+        <br />
+        <input
+          type="email"
+          id="email"
+          formControlName="email"
+          class="form-control"
+        />
+      </div>
+      <br />
+      <div class="form-group">
+        <label for="contactNumber">Contact Number</label>
+        <br />
+        <input
+          type="text"
+          id="contactNumber"
+          formControlName="contact_number"
+          class="form-control"
+        />
+      </div>
+      <br />
+      <button type="submit" class="btn btn-primary">
+        {{ isEditMode ? "Update" : "Register" }} 
+      </button>
+    </form>
+    <br />
+    <!-- <div>
+      <button class="list-button">
+        <a href="/instructors">Instructors List</a>
+      </button>
+    </div> -->
   </div>
-  <div class="form-group">
-    <label for="dob">Date of Birth</label>
-    <input type="date" id="dob" formControlName="dob" class="form-control">
-  </div>
-  <div class="form-group">
-    <label for="department">Department</label>
-    <select id="department" class="form-control" formControlName="department">
-      <option *ngFor="let department of departments" [value]="department.id">{{ department.name }}</option>
-    </select>
-    <!-- <input type="text" id="department" formControlName="department" class="form-control"> -->
-  </div>
-  <div class="form-group">
-    <label for="email">Email</label>
-    <input type="email" id="email" formControlName="email" class="form-control">
-  </div>
-  <div class="form-group">
-    <label for="contactNumber">Contact Number</label>
-    <input type="text" id="contactNumber" formControlName="contact_number" class="form-control">
-  </div>
-  <button type="submit" class="btn btn-primary">{{ isEditMode ? 'Update' : 'Add' }} Instructor</button>
-</form>
+  <br>
+  <br>
+</div>

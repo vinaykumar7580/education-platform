@@ -1,32 +1,67 @@
+<div class="body">
+  <div class="navbar">
+    <p class="navbar-head">EduSphere</p>
+    <div class="navbar-buttons">
+      <button><a class="nav-anchor" href="instructors">Instructor</a></button>
+      <button><a class="nav-anchor" href="courses">Courses</a></button>
+      <button><a class="nav-anchor" href="students">Student</a></button>
+      <button><a class="nav-anchor" href="#">Enrollment</a></button>
+      <button><a class="nav-anchor" href="#">Assignments</a></button>
+      <button><a class="nav-anchor" href="#">Submissions</a></button>
+      <button><a class="nav-anchor" href="#">Announcements</a></button>
+      <button><a class="nav-anchor" href="#">Departments</a></button>
+    </div>
+  </div>
+  <div class="course-list">
+    <div class="course-list-name">
+      <div></div>
+    <h2>Course List</h2>
+    <button>
+      <a routerLink="/courses/new" class="nav-anchor">Add New Course</a>
+    </button>
+    </div>
+    <br />
+    <table class="table">
+      <thead>
+        <tr>
+          <th>Course Code</th>
+          <th>Course Name</th>
+          <th>Department</th>
+          <th>Credits</th>
+          <th>Actions</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let course of courses">
+          <td>{{ course.course_code }}</td>
+          <td>{{ course.course_name }}</td>
+          <td>{{ getDepartmentNameById(course.department) }}</td>
+          <td>{{ course.credits }}</td>
+          <td>
+            
+            <a
+              routerLink="/courses/{{ course.id }}"
+              class="btn btn-sm btn-primary"
+              >View</a
+            >
+            <a
+              routerLink="/courses/{{ course.id }}/edit"
+              class="btn btn-sm btn-success"
+              >Edit</a
+            >
+            <button
+              class="btn btn-sm btn-danger"
+              (click)="deleteCourse(course.id)"
+            >
+              Delete
+            </button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
 
-
-<h2>Course List</h2>
-<table class="table">
-  <thead>
-    <tr>
-      <th>Course Code</th>
-      <th>Course Name</th>
-      <th>Department</th>
-      <th>Credits</th>
-      <th>Actions</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr *ngFor="let course of courses">
-      <td>{{ course.course_code }}</td>
-      <td>{{ course.course_name }}</td>
-      <td>{{ course.department }}</td>
-      <td>{{ course.credits }}</td>
-      <td>
-        <button class="btn btn-sm btn-danger" (click)="deleteCourse(course.id)">Delete</button>
-        <a routerLink="/courses/{{ course.id }}" class="btn btn-sm btn-primary">View</a>
-        <a routerLink="/courses/{{ course.id }}/edit" class="btn btn-sm btn-success">Edit</a>
-      </td>
-    </tr>
-  </tbody>
-</table>
-
-<div class="text-right">
-  <a routerLink="/courses/new" class="btn btn-primary">Add New Course</a>
+      
+  </div>
+  <br>
+  <br>
 </div>
-

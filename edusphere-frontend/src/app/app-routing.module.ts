@@ -15,6 +15,7 @@ import { AssignmentComponent } from './assignment/assignment.component';
 import { SubmissionComponent } from './submission/submission.component';
 import { AnnouncementComponent } from './announcement/announcement.component';
 import { DepartmentComponent } from './department/department.component';
+import { HomeComponent } from './home/home.component';
 
 const routes: Routes = [
   { path: 'instructors', component: InstructorListComponent },
@@ -36,7 +37,8 @@ const routes: Routes = [
   { path: 'submissions', component: SubmissionComponent },
   { path: 'announcements', component: AnnouncementComponent },
   { path: 'departments', component: DepartmentComponent },
-  { path: '', redirectTo: '/students', pathMatch: 'full' }
+  { path: 'home', component: HomeComponent },
+  { path: '', redirectTo: '/home', pathMatch: 'full' }
 ];
 
 @NgModule({

@@ -1,0 +1,49 @@
+
+
+.enroll-form{
+    width: 20%;
+    margin: auto;
+    padding: 30px;
+    box-shadow: rgba(0, 0, 0, 0.07) 0px 1px 2px, rgba(0, 0, 0, 0.07) 0px 2px 4px, rgba(0, 0, 0, 0.07) 0px 4px 8px, rgba(0, 0, 0, 0.07) 0px 8px 16px, rgba(0, 0, 0, 0.07) 0px 16px 32px, rgba(0, 0, 0, 0.07) 0px 32px 64px;
+}
+
+h2{
+    text-align: center;
+    margin: auto;
+    color: blueviolet;
+}
+label{
+    font-size: 17px;
+}
+ input{
+    padding: 7px;
+    width: 100%;
+}
+select{
+    padding: 7px;
+    width: 100%;
+}
+button{
+    padding:5px 10px;
+    font-size: 15px;
+    background-color: orange;
+    border: none;
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+    margin-right: 20px;
+    border-radius: 5px;
+
+}
+.list-button{
+    padding:5px 10px;
+    font-size: 15px;
+    background-color:blueviolet;
+    border: none;
+    font-weight: bold;
+    border-radius: 5px;
+}
+a{
+    text-decoration: none;
+    color: white;
+}

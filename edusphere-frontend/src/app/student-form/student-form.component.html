@@ -1,32 +1,98 @@
-<!-- src/app/student-form/student-form.component.html -->
-<h2>{{ isEditMode ? 'Edit Student' : 'Add Student' }}</h2>
-<form [formGroup]="studentForm" (ngSubmit)="saveStudent()">
-  <div class="form-group">
-    <label for="name">Name:</label>
-    <input type="text" id="name" class="form-control" formControlName="name" required>
+<div class="body">
+  <div class="navbar">
+    <p class="navbar-head">EduSphere</p>
+    <div class="navbar-buttons">
+      <button><a href="students/new">Register</a></button>
+      <button><a href="students/login">Login</a></button>
+    </div>
   </div>
-  <div class="form-group">
-    <label for="gender">Gender:</label>
-    <input type="text" id="gender" class="form-control" formControlName="gender">
+  <div class="student-form">
+    <h2>{{ isEditMode ? "Edit Student" : "Register Student" }}</h2>
+    <br />
+    <form [formGroup]="studentForm" (ngSubmit)="saveStudent()">
+      <div class="form-group">
+        <label for="name">Name:</label>
+        <br />
+        <input
+          type="text"
+          id="name"
+          class="form-control"
+          formControlName="name"
+          required
+        />
+      </div>
+      <br />
+      <div class="form-group">
+        <label for="gender">Gender:</label>
+        <br />
+        <input
+          type="text"
+          id="gender"
+          class="form-control"
+          formControlName="gender"
+        />
+      </div>
+      <br />
+      <div class="form-group">
+        <label for="dob">Date of Birth:</label>
+        <br />
+        <input
+          type="date"
+          id="dob"
+          class="form-control"
+          formControlName="dob"
+        />
+      </div>
+      <br />
+      <div class="form-group">
+        <label for="major">Major:</label>
+        <br />
+        <input
+          type="text"
+          id="major"
+          class="form-control"
+          formControlName="major"
+        />
+      </div>
+      <br />
+      <div class="form-group">
+        <label for="email">Email:</label>
+        <br />
+        <input
+          type="email"
+          id="email"
+          class="form-control"
+          formControlName="email"
+          required
+        />
+      </div>
+      <br />
+      <div class="form-group">
+        <label for="contactNumber">Contact Number:</label>
+        <br />
+        <input
+          type="tel"
+          id="contactNumber"
+          class="form-control"
+          formControlName="contact_number"
+        />
+      </div>
+      <br />
+      <div class="text-right">
+        <button type="submit" class="btn btn-primary">{{ isEditMode ? "Edit Student" : "Register Student" }}</button>
+        <!-- <button type="button" class="btn btn-secondary" routerLink="/students/new">
+          Cancel
+        </button> -->
+      </div>
+    </form>
+
+    <br />
+    <!-- <div>
+      <button class="list-button">
+        <a routerLink="/enroll" class="btn btn-primary">Enrollment</a>
+      </button>
+    </div> -->
   </div>
-  <div class="form-group">
-    <label for="dob">Date of Birth:</label>
-    <input type="date" id="dob" class="form-control" formControlName="dob">
-  </div>
-  <div class="form-group">
-    <label for="major">Major:</label>
-    <input type="text" id="major" class="form-control" formControlName="major">
-  </div>
-  <div class="form-group">
-    <label for="email">Email:</label>
-    <input type="email" id="email" class="form-control" formControlName="email" required>
-  </div>
-  <div class="form-group">
-    <label for="contactNumber">Contact Number:</label>
-    <input type="tel" id="contactNumber" class="form-control" formControlName="contact_number">
-  </div>
-  <div class="text-right">
-    <button type="button" class="btn btn-secondary" routerLink="/students">Cancel</button>
-    <button type="submit" class="btn btn-primary">Save</button>
-  </div>
-</form>
+  <br>
+  <br>
+</div>

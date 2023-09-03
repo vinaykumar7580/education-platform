@@ -1,8 +1,29 @@
-
-<h2>Instructor Details</h2>
-<div *ngIf="instructor">
-  <p><strong>Name:</strong> {{ instructor.name }}</p>
-  <p><strong>Department:</strong> {{ instructor.department }}</p>
-  <p><strong>Email:</strong> {{ instructor.email }}</p>
-  <p><strong>Contact Number:</strong> {{ instructor.contact_number }}</p>
+<div class="body">
+  <div class="navbar">
+    <p class="navbar-head">EduSphere</p>
+    <div class="navbar-buttons">
+      <button><a class="nav-anchor" href="instructors">Instructor</a></button>
+      <button><a class="nav-anchor" href="courses">Courses</a></button>
+      <button><a class="nav-anchor" href="students">Student</a></button>
+      <button><a class="nav-anchor" href="#">Enrollment</a></button>
+      <button><a class="nav-anchor" href="#">Assignments</a></button>
+      <button><a class="nav-anchor" href="#">Submissions</a></button>
+      <button><a class="nav-anchor" href="#">Announcements</a></button>
+      <button><a class="nav-anchor" href="#">Departments</a></button>
+    </div>
+  </div>
+  <div class="instructor-detail">
+    <h2>Instructor Details</h2>
+    <div *ngIf="instructor">
+      <p><strong>Name:</strong> {{ instructor.name }}</p>
+      <p>
+        <strong>Department:</strong>
+        {{ getDepartmentNameById(instructor.department) }}
+      </p>
+      <p><strong>Email:</strong> {{ instructor.email }}</p>
+      <p><strong>Contact Number:</strong> {{ instructor.contact_number }}</p>
+    </div>
+  </div>
+  <br>
+  <br>
 </div>

@@ -68,6 +68,7 @@ export class StudentFormComponent implements OnInit {
         const studentId= +this.route.snapshot.paramMap.get('id')!;
         this.studentService.updateStudent(studentId, studentData).subscribe(
           ()=>{
+            alert("Student Details Updated Successful")
             this.router.navigate(['/students']);
           },
           error=>{
@@ -77,7 +78,8 @@ export class StudentFormComponent implements OnInit {
       }else{
         this.studentService.createStudent(studentData).subscribe(
           ()=>{
-            this.router.navigate(['/students']);
+            alert("Student Register Successful")
+            this.router.navigate(['/enroll']);
           },
           error=>{
             console.error('Error creating student:', error);

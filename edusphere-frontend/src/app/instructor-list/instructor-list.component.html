@@ -1,5 +1,22 @@
 
+<div class="body">
+  <div class="navbar">
+    <p class="navbar-head">EduSphere</p>
+    <div class="navbar-buttons">
+      <button><a class="nav-anchor" href="instructors">Instructor</a></button>
+      <button><a class="nav-anchor" href="courses">Courses</a></button>
+      <button><a class="nav-anchor" href="students">Student</a></button>
+      <button><a class="nav-anchor" href="#">Enrollment</a></button>
+      <button><a class="nav-anchor" href="#">Assignments</a></button>
+      <button><a class="nav-anchor" href="#">Submissions</a></button>
+      <button><a class="nav-anchor" href="#">Announcements</a></button>
+      <button><a class="nav-anchor" href="#">Departments</a></button>
+
+    </div>
+  </div>
+<div class="instructor-list">
 <h2>Instructor List</h2>
+<br>
 <table class="table">
   <thead>
     <tr>
@@ -13,20 +30,23 @@
   <tbody>
     <tr *ngFor="let instructor of instructors">
       <td>{{ instructor.name }}</td>
-      <td>{{ instructor.department }}</td>
+      <td>{{ getDepartmentNameById(instructor.department) }}</td>
       <td>{{ instructor.email }}</td>
       <td>{{ instructor.contact_number }}</td>
       <td>
-        <button class="btn btn-sm btn-danger" (click)="deleteInstructor(instructor.id)">Delete</button>
         <!-- Add edit/update button and functionality here -->
         <a routerLink="/instructors/{{ instructor.id }}" class="btn btn-sm btn-primary">View</a>
         <a routerLink="/instructors/{{ instructor.id }}/edit" class="btn btn-sm btn-success">Edit</a>
+        <button class="btn btn-sm btn-danger" (click)="deleteInstructor(instructor.id)">Delete</button>
       </td>
     </tr>
   </tbody>
 </table>
-
-<div class="text-right">
-    <a routerLink="/instructors/new" class="btn btn-primary">Add New Instructor</a>
 </div>
+<br>
+<br>
+</div>
+<!-- <div class="text-right">
+    <a routerLink="/instructors/new" class="btn btn-primary">Add New Instructor</a>
+</div> -->
 
