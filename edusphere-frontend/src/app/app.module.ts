@@ -26,6 +26,8 @@ import { HomeComponent } from './home/home.component';
 import { SubmissionFormComponent } from './submission-form/submission-form.component';
 import { AssignmentListComponent } from './assignment-list/assignment-list.component';
 import { AnnouncementListComponent } from './announcement-list/announcement-list.component';
+import { StudentLoginComponent } from './student-login/student-login.component';
+import { InstructorLoginComponent } from './instructor-login/instructor-login.component';
 
 @NgModule({
   declarations: [
@@ -49,6 +51,8 @@ import { AnnouncementListComponent } from './announcement-list/announcement-list
     SubmissionFormComponent,
     AssignmentListComponent,
     AnnouncementListComponent,
+    StudentLoginComponent,
+    InstructorLoginComponent,
   ],
   imports: [
     BrowserModule,

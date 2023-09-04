@@ -6,5 +6,6 @@ export interface Student {
     dob: string;
     major: string;
     email: string;
+    password: string;
     contact_number: string;
 }

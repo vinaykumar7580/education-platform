@@ -45,7 +45,8 @@ export class StudentFormComponent implements OnInit {
       gender: [''],
       dob: [''],
       major: [''],
-      email: ['', Validators.email],
+      email: ['', Validators.required],
+      password: [''],
       contact_number: ['']
     })
   }
@@ -79,7 +80,7 @@ export class StudentFormComponent implements OnInit {
         this.studentService.createStudent(studentData).subscribe(
           ()=>{
             alert("Student Register Successful")
-            this.router.navigate(['/enroll']);
+            this.router.navigate(['/students/login']);
           },
           error=>{
             console.error('Error creating student:', error);

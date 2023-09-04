@@ -1,27 +1,79 @@
-# EdusphereFrontend
+# EduSphere Educational Management Platform
+EduSphere is an advanced educational management platform designed to enhance the learning experience for students, instructors within educational institutions. This web application provides a comprehensive solution for managing courses, assignments, academic interactions, and integrates cutting-edge AI features to augment the learning journey.
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 16.2.0.
+## Tech Stack
+**Frontend**: Angular
+**Backend**: Django
 
-## Development server
+## Deployment
+**Frontend URL**: 
+**Backend URL**: 
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+## Entities
+EduSphere revolves around several core entities, each serving a specific purpose within the educational ecosystem.
 
-## Code scaffolding
+### 1. Student
+- **CRUD Operations**: Enables Create, Read, Update, Delete operations for student profiles.
+- **Managed Fields**: Name, Student ID, Gender, Date of Birth, Major, Email, Contact Number.
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+### 2. Instructor
+- **CRUD Operations**: Allows for the management of instructor profiles.
+- **Managed Fields**: Name, Gender, Date of Birth, Department, Email, Contact Number.
 
-## Build
+### 3. Course
+- **Course Management**: Provides functionality for managing courses.
+- **Managed Fields**: Course Code, Course Name, Department, Credits, Description.
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+### 4. Enrollment
+- **Enrollment System**: Links students to courses and manages enrollments.
 
-## Running unit tests
+### 5. Assignment
+- **Assignment Management**: Allows instructors to create and manage assignments.
+- **Managed Fields**: Title, Description, Due Date.
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+### 6. Submission
+- **Submission System**: Students can submit assignments, and instructors can review and grade submissions.
+- **Managed Fields**: Submission Date, Status, Remarks.
 
-## Running end-to-end tests
+### 7. Department
+- **Department Hierarchy**: Organizes courses and instructors into departments.
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+### 8. Announcement
+- **Announcement System**: Provides a platform for communication through announcements.
+- **Managed Fields**: Title, Description, Publish Date.
 
-## Further help
+## Milestones
+EduSphere development is divided into several milestones, each addressing specific aspects of the project.
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+### Milestone 1: Project Setup & Planning
+- Project initialization and planning.
+
+### Milestone 2: Database & Backend Setup
+- Setting up the database and backend infrastructure.
+
+### Milestone 3: Instructor Management System
+- Implementing CRUD operations for instructor profiles.
+
+### Milestone 4: Course Management System
+- Developing course management features.
+
+### Milestone 5: Student Management System
+- Building student profile management capabilities.
+
+### Milestone 6: Enrollment and Assignment Systems
+- Establishing enrollment processes and assignment management.
+
+### Milestone 7: Submission and Announcement Systems
+- Implementing submission and announcement features.
+
+### Milestone 8: Dashboard and Communication Features
+- Creating dashboards for students, instructors, and administrators.
+- Implementing communication features.
+
+## Getting Started
+To get started with EduSphere, follow these steps:
+
+1. Clone this repository.
+2. Install the necessary dependencies.
+3. Set up the backend server.
+4. Run the application.

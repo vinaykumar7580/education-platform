@@ -1,0 +1,38 @@
+<div class="body">
+  <div class="navbar">
+    <p class="navbar-head">EduSphere</p>
+    <div class="navbar-buttons">
+      <button><a href="instructors/new">Register</a></button>
+      <button><a href="instructors/login">Login</a></button>
+    </div>
+  </div>
+  <div class="instructor-login">
+    <h2>Instructor Login</h2>
+    <br />
+    <form (ngSubmit)="login()">
+      <label for="email">Email:</label>
+      <input
+        type="email"
+        id="email"
+        [(ngModel)]="email"
+        name="email"
+        required
+      />
+      <br />
+      <br />
+      <label for="password">Password:</label>
+      <input
+        type="password"
+        id="password"
+        [(ngModel)]="password"
+        name="password"
+        required
+      />
+      <br />
+      <br />
+      <button type="submit" class="list-button">Login</button>
+    </form>
+  </div>
+  <br />
+  <br />
+</div>

@@ -51,6 +51,7 @@ export class InstructorFormComponent implements OnInit {
       dob: [''],
       department: [''],
       email: ['', Validators.email],
+      password: [''],
       contact_number: [''],
     });
   }
@@ -95,7 +96,8 @@ export class InstructorFormComponent implements OnInit {
       } else {
         this.instructorService.createInstructor(instructorData).subscribe(
           () => {
-            this.router.navigate(['/instructors']);
+            alert("Instructor Register Successful")
+            this.router.navigate(['/instructors/login']);
           },
           (error) => {
             console.error('Error creating instructor:', error);

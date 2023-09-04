@@ -12,6 +12,7 @@ class Instructor(models.Model):
     dob=models.DateField()
     department=models.ForeignKey(Department, on_delete=models.CASCADE)
     email=models.EmailField()
+    password = models.CharField(max_length=128)
     contact_number=models.CharField(max_length=20)
 
     def __str__(self):
@@ -33,6 +34,7 @@ class Student(models.Model):
     dob = models.DateField()
     major = models.CharField(max_length=100)
     email = models.EmailField()
+    password = models.CharField(max_length=128)
     contact_number = models.CharField(max_length=20)
 
     def __str__(self):

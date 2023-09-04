@@ -1,5 +1,6 @@
 
 .body{
+    height: 100vh;
     background: rgb(2, 0, 36);
   background: linear-gradient(
     90deg,
@@ -37,14 +38,18 @@ a {
   font-size: 18px;
   color: white;
 }
-.instructor-form{
+h3{
+    color: white;
+}
+.student-login{
+    border:5px solid white;
+    color:white;
     width: 20%;
     margin: auto;
-    padding: 30px;
+    padding: 20px 30px;
     /* box-shadow: rgba(0, 0, 0, 0.07) 0px 1px 2px, rgba(0, 0, 0, 0.07) 0px 2px 4px, rgba(0, 0, 0, 0.07) 0px 4px 8px, rgba(0, 0, 0, 0.07) 0px 8px 16px, rgba(0, 0, 0, 0.07) 0px 16px 32px, rgba(0, 0, 0, 0.07) 0px 32px 64px; */
     margin-top: 50px;
     margin-bottom: 50px;
-    border: 5px solid white;
 }
 
 h2{
@@ -54,17 +59,10 @@ h2{
 }
 label{
     font-size: 17px;
-    color: white;
 }
- input{
+input{
     padding: 7px;
     width: 100%;
-    margin: auto;
- }
-select{
-    padding: 7px;
-    width: 100%;
-    margin: auto;
 }
 button{
     padding:10px 20px;
