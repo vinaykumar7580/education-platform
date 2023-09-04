@@ -1,13 +1,13 @@
-# EduSphere Educational Management Platform
+# EduSphere 
 EduSphere is an advanced educational management platform designed to enhance the learning experience for students, instructors within educational institutions. This web application provides a comprehensive solution for managing courses, assignments, academic interactions, and integrates cutting-edge AI features to augment the learning journey.
 
 ## Tech Stack
-**Frontend**: Angular
-**Backend**: Django
+- **Frontend**: Angular
+- **Backend**: Django
 
 ## Deployment
-**Frontend URL**: 
-**Backend URL**: 
+- **Frontend URL**: 
+- **Backend URL**: 
 
 ## Entities
 EduSphere revolves around several core entities, each serving a specific purpose within the educational ecosystem.
